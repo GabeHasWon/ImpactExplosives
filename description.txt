@@ -1,0 +1,6 @@
+--- Contact Explosives ---
+by GabeHasWon
+commissioned by HeavyDutyDerby
+
+Adds in the Contact explosives, which all explode on contact with a tile, NPC or player. It's crafted with Red gel, from Red Slimes exclusively.
+Also adds in the Ultrahazardous explosives, a stronger version of the Contact explosives that deal substantially more damage.

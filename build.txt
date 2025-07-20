@@ -1,0 +1,3 @@
+displayName = Dangerous Explosives
+author = GabeHasWon
+version = 1.0

@@ -1,0 +1,63 @@
+Items: {
+	RedGel: {
+		DisplayName: Red Gel
+		Tooltip: "'Both tasty and explosive!'"
+	}
+
+	ImpactGrenade: {
+		DisplayName: Contact Grenade
+		Tooltip: Explodes on contact
+	}
+
+	ImpactBomb: {
+		DisplayName: Contact Bomb
+		Tooltip: "{$ImpactGrenade.Tooltip}"
+	}
+
+	ImpactDynamite: {
+		DisplayName: Contact Dynamite
+		Tooltip: "{$ImpactGrenade.Tooltip}"
+	}
+
+	UltrahazardousGrenade: {
+		DisplayName: Ultrahazardous Grenade
+		Tooltip: "{$ImpactGrenade.Tooltip}"
+	}
+
+	UltrahazardousGrenadeIchor: {
+		DisplayName: Ultrahazardous Grenade
+		Tooltip: "{$ImpactGrenade.Tooltip}"
+	}
+
+	UltrahazardousBomb: {
+		DisplayName: Ultrahazardous Bomb
+		Tooltip: "{$ImpactGrenade.Tooltip}"
+	}
+
+	UltrahazardousBombIchor: {
+		DisplayName: Ultrahazardous Bomb
+		Tooltip: "{$ImpactGrenade.Tooltip}"
+	}
+
+	UltrahazardousDynamite: {
+		DisplayName: Ultrahazardous Dynamite
+		Tooltip: "{$ImpactGrenade.Tooltip}"
+	}
+
+	UltrahazardousDynamiteIchor: {
+		DisplayName: Ultrahazardous Dynamite
+		Tooltip: "{$ImpactGrenade.Tooltip}"
+	}
+}
+
+Projectiles: {
+	ImpactGrenadeProj.DisplayName: Contact Grenade
+	ImpactBombProj.DisplayName: Contact Bomb
+	ImpactDynamiteProj.DisplayName: Contact Dynamite
+	UltrahazardousGrenadeIchorProj.DisplayName: "{$UltrahazardousGrenadeProj.DisplayName}"
+	UltrahazardousGrenadeProj.DisplayName: Ultrahazardous Grenade
+	UltrahazardousBombIchorProj.DisplayName: "{UltraHazardousBombProj.DisplayName}"
+	UltrahazardousBombProj.DisplayName: Ultrahazardous Bomb
+	UltrahazardousDynamiteProj.DisplayName: Ultrahazardous Dynamite
+	UltrahazardousDynamiteIchorProj.DisplayName: "{$UltrahazardousDynamiteProj.DisplayName}"
+}
