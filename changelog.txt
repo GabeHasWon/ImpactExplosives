@@ -1,5 +1,5 @@
 v1.0.0.1
-- Reduced shoot speed on both Dynamites
+- Reduced shoot speed on both Dynamites to 0
 - Fixed ichorous Ultrahazardous Bombs not doing damage properly
 - Fixed ichorous Ultrahazardous Bombs being crafted with cursed flames
 - Made Red Slimes only drop 1 Red Gel at a time

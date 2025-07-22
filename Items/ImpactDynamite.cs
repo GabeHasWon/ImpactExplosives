@@ -7,7 +7,7 @@ internal class ImpactDynamite : ModItem
         Item.CloneDefaults(ItemID.Dynamite);
         Item.shoot = ModContent.ProjectileType<ImpactDynamiteProj>();
         Item.damage = 250;
-        Item.shootSpeed = 1;
+        Item.shootSpeed = 0;
     }
 
     public override void AddRecipes() => CreateRecipe()

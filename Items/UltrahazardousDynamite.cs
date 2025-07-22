@@ -7,7 +7,7 @@ internal class UltrahazardousDynamite : ModItem
         Item.CloneDefaults(ItemID.Dynamite);
         Item.shoot = ModContent.ProjectileType<UltrahazardousDynamiteProj>();
         Item.damage = 350;
-        Item.shootSpeed = 2;
+        Item.shootSpeed = 0;
         Item.rare = ItemRarityID.Green;
     }
 
@@ -76,7 +76,7 @@ internal class UltrahazardousDynamiteIchor : ModItem
         Item.CloneDefaults(ItemID.Dynamite);
         Item.shoot = ModContent.ProjectileType<UltrahazardousDynamiteIchorProj>();
         Item.damage = 350;
-        Item.shootSpeed = 2;
+        Item.shootSpeed = 0;
         Item.rare = ItemRarityID.Green;
     }
 
