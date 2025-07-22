@@ -81,7 +81,7 @@ internal class UltrahazardousBombIchor : ModItem
 
     public override void AddRecipes() => CreateRecipe()
         .AddIngredient<ImpactBomb>(3)
-        .AddIngredient(ItemID.CursedFlame, 4)
+        .AddIngredient(ItemID.Ichor, 4)
         .Register();
 }
 
@@ -102,6 +102,8 @@ internal class UltrahazardousBombIchorProj : ModProjectile
 
     public override void AI()
     {
+        Projectile.damage = (int)Main.player[Projectile.owner].GetDamage(DamageClass.Ranged).ApplyTo(250);
+
         if (Projectile.timeLeft == 2)
         {
             if (!Main.dedServ)

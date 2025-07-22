@@ -51,27 +51,25 @@ public class ImpactExplosives : Mod
     public static void BombVFX(Projectile projectile)
     {
         SoundEngine.PlaySound(in SoundID.Item14, projectile.position);
-        int num977 = 6;
+        int dustId = DustID.Torch;
 
-        for (int num978 = 0; num978 < 20; num978++)
+        for (int i = 0; i < 20; i++)
         {
-            int num979 = Dust.NewDust(projectile.position, projectile.width, projectile.height, 31, 0f, 0f, 100, default(Color), 1.5f);
-            Dust dust78 = Main.dust[num979];
-            Dust dust334 = dust78;
-            dust334.velocity *= 1.4f;
+            int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, DustID.Smoke, 0f, 0f, 100, default(Color), 1.5f);
+            Dust newDust = Main.dust[dust];
+            newDust.velocity *= 1.4f;
         }
 
-        for (int num980 = 0; num980 < 10; num980++)
+        for (int i = 0; i < 10; i++)
         {
-            int num981 = Dust.NewDust(projectile.position, projectile.width, projectile.height, num977, 0f, 0f, 100, default(Color), 2.5f);
-            Main.dust[num981].noGravity = true;
-            Dust dust79 = Main.dust[num981];
-            Dust dust334 = dust79;
-            dust334.velocity *= 5f;
-            num981 = Dust.NewDust(projectile.position, projectile.width, projectile.height, num977, 0f, 0f, 100, default(Color), 1.5f);
-            dust79 = Main.dust[num981];
-            dust334 = dust79;
-            dust334.velocity *= 3f;
+            int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, dustId, 0f, 0f, 100, default(Color), 2.5f);
+            Dust newDust = Main.dust[dust];
+            newDust.noGravity = true;
+            newDust.velocity *= 5f;
+
+            dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, dustId, 0f, 0f, 100, default(Color), 1.5f);
+            newDust = Main.dust[dust];
+            newDust.velocity *= 3f;
         }
 
         IEntitySource src = projectile.GetSource_Death();
