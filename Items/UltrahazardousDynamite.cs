@@ -27,6 +27,8 @@ internal class UltrahazardousDynamiteProj : ModProjectile
     {
         Projectile.CloneDefaults(ProjectileID.Dynamite);
         Projectile.height += 2;
+        Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = 10;
     }
 
     public override bool? CanHitNPC(NPC target) => Projectile.Hitbox.Intersects(target.Hitbox) && !target.friendly;
@@ -96,6 +98,8 @@ internal class UltrahazardousDynamiteIchorProj : ModProjectile
     {
         Projectile.CloneDefaults(ProjectileID.Dynamite);
         Projectile.height += 2;
+        Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = 10;
     }
 
     public override bool? CanHitNPC(NPC target) => Projectile.Hitbox.Intersects(target.Hitbox) && !target.friendly;
@@ -130,6 +134,9 @@ internal class UltrahazardousDynamiteIchorProj : ModProjectile
         Projectile.timeLeft = 3;
         return true;
     }
+
+    public override bool CanHitPvp(Player target) => Projectile.timeLeft is 2 or > 3;
+    public override bool CanHitPlayer(Player target) => Projectile.timeLeft is 2 or > 3;
 
     public override void OnHitPlayer(Player target, Player.HurtInfo info)
     {

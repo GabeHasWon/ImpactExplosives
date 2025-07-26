@@ -23,7 +23,14 @@ internal class ImpactGrenadeProj : ModProjectile
     public override string Texture => base.Texture.Replace("Proj", "");
 
     public override void SetStaticDefaults() => ProjectileID.Sets.Explosive[Type] = true;
-    public override void SetDefaults() => Projectile.CloneDefaults(ProjectileID.Grenade);
+
+    public override void SetDefaults()
+    {
+        Projectile.CloneDefaults(ProjectileID.Grenade);
+        Projectile.usesLocalNPCImmunity = true;
+        Projectile.localNPCHitCooldown = 10;
+    }
+
     public override bool? CanHitNPC(NPC target) => Projectile.Hitbox.Intersects(target.Hitbox) && !target.friendly;
 
     public override void AI()
@@ -49,6 +56,10 @@ internal class ImpactGrenadeProj : ModProjectile
         Projectile.timeLeft = 3;
         return true;
     }
+
+    // Safety net for multihits on players
+    public override bool CanHitPvp(Player target) => Projectile.timeLeft is 2 or > 3;
+    public override bool CanHitPlayer(Player target) => Projectile.timeLeft is 2 or > 3;
 
     public override void OnHitPlayer(Player target, Player.HurtInfo info)
     {
