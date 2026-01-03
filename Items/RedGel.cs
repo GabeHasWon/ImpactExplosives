@@ -18,15 +18,14 @@ internal class RedGelReplacement : GlobalNPC
     {
         if (npc.netID == NPCID.RedSlime)
         {
-            var l = npcLoot.Get();
+            var l = npcLoot.Get(false);
 
             foreach (var rule in l)
             {
                 if (rule is CommonDrop common && common.itemId == ItemID.Gel)
                 {
-                    common.itemId = ModContent.ItemType<RedGel>();
-                    common.amountDroppedMaximum = 1;
-                    common.amountDroppedMinimum = 1;
+                    npcLoot.Remove(common);
+                    npcLoot.Add(new CommonDrop(ModContent.ItemType<RedGel>(), 1));
                 }
             }
         }
